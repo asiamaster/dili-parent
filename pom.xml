@@ -6,17 +6,18 @@
 	<groupId>com.dili</groupId>
 	<artifactId>dili-parent</artifactId>
 	<name>dili-parent</name>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>3.6.5-SNAPSHOT</version>
 	<description>顶层父项目</description>
 	<packaging>pom</packaging>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>13</java.version>
 		<projectdir>${basedir}</projectdir>
 		<!-- 依赖版本 -->
-		<sharp-sword.version>3.6.2-SNAPSHOT</sharp-sword.version>
+		<sharp-sword.version>3.6.5-SNAPSHOT</sharp-sword.version>
+		<spring-boot.version>2.2.4.RELEASE</spring-boot.version>
 	</properties>
-
 	<!--地利 -->
 	<distributionManagement>
 		<repository>
@@ -80,17 +81,17 @@
 			</resource>
 		</resources>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<!-- 编译JDK版本 -->
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<encoding>UTF-8</encoding>
-					<parameters>true</parameters>
-					<compilerArgument>-proc:none</compilerArgument>
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+<!--				<version>3.8.1</version>-->
+<!--				&lt;!&ndash; 编译JDK版本 &ndash;&gt;-->
+<!--				<configuration>-->
+<!--					<source>1.8</source>-->
+<!--					<target>1.8</target>-->
+<!--					<encoding>UTF-8</encoding>-->
+<!--					<parameters>true</parameters>-->
+<!--					<compilerArgument>-proc:none</compilerArgument>-->
 <!--					<compilerArgs>-->
 <!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>-->
 <!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>-->
@@ -98,6 +99,19 @@
 <!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>-->
 <!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>-->
 <!--					</compilerArgs>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff</nonFilteredFileExtension>
+						<nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -106,12 +120,20 @@
 				<version>3.2.1</version>
 				<executions>
 					<execution>
-						<id>attach-sources</id>
+						<phase>package</phase>
 						<goals>
-							<goal>jar</goal>
+							<goal>jar-no-fork</goal>
 						</goals>
 					</execution>
 				</executions>
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>attach-sources</id>-->
+<!--						<goals>-->
+<!--							<goal>jar</goal>-->
+<!--						</goals>-->
+<!--					</execution>-->
+<!--				</executions>-->
 			</plugin>
 
 			<!--<plugin> -->
@@ -148,7 +170,7 @@
 				<!-- Import dependency management from Spring Boot -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>2.2.2.RELEASE</version>
+				<version>${spring-boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
