@@ -6,7 +6,7 @@
 	<groupId>com.dili</groupId>
 	<artifactId>dili-parent</artifactId>
 	<name>dili-parent</name>
-	<version>3.6.5-SNAPSHOT</version>
+	<version>3.6.7-SNAPSHOT</version>
 	<description>顶层父项目</description>
 	<packaging>pom</packaging>
 
@@ -15,7 +15,7 @@
 		<java.version>13</java.version>
 		<projectdir>${basedir}</projectdir>
 		<!-- 依赖版本 -->
-		<sharp-sword.version>3.6.5-SNAPSHOT</sharp-sword.version>
+		<sharp-sword.version>3.6.7-SNAPSHOT</sharp-sword.version>
 		<spring-boot.version>2.2.4.RELEASE</spring-boot.version>
 	</properties>
 	<!--地利 -->
