@@ -6,7 +6,7 @@
 	<groupId>com.dili</groupId>
 	<artifactId>dili-parent</artifactId>
 	<name>dili-parent</name>
-	<version>3.6.7-SNAPSHOT</version>
+	<version>3.6.8-20201014-SNAPSHOT</version>
 	<description>顶层父项目</description>
 	<packaging>pom</packaging>
 
@@ -15,8 +15,8 @@
 		<java.version>13</java.version>
 		<projectdir>${basedir}</projectdir>
 		<!-- 依赖版本 -->
-		<sharp-sword.version>3.6.7-SNAPSHOT</sharp-sword.version>
-		<spring-boot.version>2.2.4.RELEASE</spring-boot.version>
+		<sharp-sword.version>3.6.8-SNAPSHOT</sharp-sword.version>
+		<spring-boot.version>2.2.10.RELEASE</spring-boot.version>
 	</properties>
 	<!--地利 -->
 	<distributionManagement>
@@ -24,15 +24,15 @@
 			<id>central</id>
 			<name>Artifactory Release Repository</name>
 			<url>
-                http://mvn2.diligrp.com/artifactory/libs-release-local
-            </url>
+				http://mvn2.diligrp.com/artifactory/libs-release-local
+			</url>
 		</repository>
 		<snapshotRepository>
 			<id>central</id>
 			<name>Artifactory Snapshot Repository</name>
 			<url>
-                http://mvn2.diligrp.com/artifactory/libs-snapshot-local
-            </url>
+				http://mvn2.diligrp.com/artifactory/libs-snapshot-local
+			</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -81,26 +81,26 @@
 			</resource>
 		</resources>
 		<plugins>
-<!--			<plugin>-->
-<!--				<groupId>org.apache.maven.plugins</groupId>-->
-<!--				<artifactId>maven-compiler-plugin</artifactId>-->
-<!--				<version>3.8.1</version>-->
-<!--				&lt;!&ndash; 编译JDK版本 &ndash;&gt;-->
-<!--				<configuration>-->
-<!--					<source>1.8</source>-->
-<!--					<target>1.8</target>-->
-<!--					<encoding>UTF-8</encoding>-->
-<!--					<parameters>true</parameters>-->
-<!--					<compilerArgument>-proc:none</compilerArgument>-->
-<!--					<compilerArgs>-->
-<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>-->
-<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>-->
-<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>-->
-<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>-->
-<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>-->
-<!--					</compilerArgs>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
+			<!--			<plugin>-->
+			<!--				<groupId>org.apache.maven.plugins</groupId>-->
+			<!--				<artifactId>maven-compiler-plugin</artifactId>-->
+			<!--				<version>3.8.1</version>-->
+			<!--				&lt;!&ndash; 编译JDK版本 &ndash;&gt;-->
+			<!--				<configuration>-->
+			<!--					<source>1.8</source>-->
+			<!--					<target>1.8</target>-->
+			<!--					<encoding>UTF-8</encoding>-->
+			<!--					<parameters>true</parameters>-->
+			<!--					<compilerArgument>-proc:none</compilerArgument>-->
+			<!--					<compilerArgs>-->
+			<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>-->
+			<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>-->
+			<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>-->
+			<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>-->
+			<!--						<arg>&#45;&#45;add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>-->
+			<!--					</compilerArgs>-->
+			<!--				</configuration>-->
+			<!--			</plugin>-->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -126,14 +126,14 @@
 						</goals>
 					</execution>
 				</executions>
-<!--				<executions>-->
-<!--					<execution>-->
-<!--						<id>attach-sources</id>-->
-<!--						<goals>-->
-<!--							<goal>jar</goal>-->
-<!--						</goals>-->
-<!--					</execution>-->
-<!--				</executions>-->
+				<!--				<executions>-->
+				<!--					<execution>-->
+				<!--						<id>attach-sources</id>-->
+				<!--						<goals>-->
+				<!--							<goal>jar</goal>-->
+				<!--						</goals>-->
+				<!--					</execution>-->
+				<!--				</executions>-->
 			</plugin>
 
 			<!--<plugin> -->
@@ -170,14 +170,15 @@
 				<!-- Import dependency management from Spring Boot -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>${spring-boot.version}</version>
+				<version>2.2.10.RELEASE</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Hoxton.RELEASE</version>
+				<version>Hoxton.SR8</version>
+				<!--				<version>Hoxton.RELEASE</version>-->
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
