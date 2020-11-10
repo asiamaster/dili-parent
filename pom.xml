@@ -6,7 +6,7 @@
 	<groupId>com.dili</groupId>
 	<artifactId>dili-parent</artifactId>
 	<name>dili-parent</name>
-	<version>3.7.0-SNAPSHOT</version>
+	<version>3.7.1-SNAPSHOT</version>
 	<description>顶层父项目</description>
 	<packaging>pom</packaging>
 
@@ -15,8 +15,9 @@
 		<java.version>13</java.version>
 		<projectdir>${basedir}</projectdir>
 		<!-- 依赖版本 -->
-		<sharp-sword.version>3.7.0-SNAPSHOT</sharp-sword.version>
+		<sharp-sword.version>3.7.1-SNAPSHOT</sharp-sword.version>
 		<spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
 	</properties>
 	<!--地利 -->
 	<distributionManagement>
@@ -177,7 +178,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Hoxton.SR8</version>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
